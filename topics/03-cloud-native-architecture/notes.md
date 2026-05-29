@@ -6,7 +6,7 @@
 
 - **Observability** is the ability to understand system behavior from telemetry data.
 - The three common telemetry signals are **metrics**, **logs**, and **traces**.
-- **Metrics** are numeric measurements over time (for example CPU usage or request latency).
+- **Metrics** are numeric measurements over time (such as CPU usage or request latency).
 - **Logs** are timestamped event records produced by applications and platform components.
 - **Traces** represent end-to-end request flow across services and help identify where latency or errors occur.
 - Kubernetes exposes operational signals through component logs, events, and metrics endpoints.
@@ -37,7 +37,7 @@
 - Per CNCF, cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments.
 - Cloud native systems commonly use **containers**, **microservices**, **declarative APIs**, and **automation**.
 - Kubernetes is a key orchestration platform in the cloud native ecosystem, but the ecosystem also includes observability, networking, runtime, and delivery projects.
-- CNCF hosts projects at different maturity stages (for example sandbox, incubating, and graduated).
+- CNCF hosts projects at different maturity stages (such as sandbox, incubating, and graduated).
 - The CNCF Landscape is used to navigate categories of tools and projects.
 
 ### Key commands and examples
