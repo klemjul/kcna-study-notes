@@ -90,7 +90,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.14.2
+          image: nginx:1.27.4
 ```
 
 ## Exam-focused reminders

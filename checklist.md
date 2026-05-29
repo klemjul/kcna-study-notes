@@ -5,6 +5,11 @@
   - [ ] Administration
   - [ ] Scheduling
   - [ ] Containerization
+- [ ] Container orchestration
+  - [ ] Networking
+  - [ ] Security
+  - [ ] Troubleshooting
+  - [ ] Storage
 - [ ] Cloud native application delivery
   - [ ] Application delivery
   - [ ] Debugging
@@ -12,9 +17,4 @@
   - [ ] Observability
   - [ ] Cloud native ecosystem and principles
   - [ ] Cloud native community and collaboration
-- [ ] Container orchestration
-  - [ ] Networking
-  - [ ] Security
-  - [ ] Troubleshooting
-  - [ ] Storage
 - [ ] Complete final revision

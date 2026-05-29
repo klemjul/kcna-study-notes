@@ -18,10 +18,7 @@
 - Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 - Services: https://kubernetes.io/docs/concepts/services-networking/service/
 - ConfigMaps: https://kubernetes.io/docs/concepts/configuration/configmap/
-- Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
 - Namespaces: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
-- RBAC authorization: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
-- Persistent Volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 - kubectl reference: https://kubernetes.io/docs/reference/kubectl/
 - kubectl logs reference: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_logs/
 - Configure access to multiple clusters: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
@@ -31,7 +28,10 @@
 - Workloads overview: https://kubernetes.io/docs/concepts/workloads/
 - Scheduling, preemption, and eviction: https://kubernetes.io/docs/concepts/scheduling-eviction/
 - DNS for Services and Pods: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+- Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
+- RBAC authorization: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - Storage concepts: https://kubernetes.io/docs/concepts/storage/
+- Persistent Volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 
 ## Cloud Native Application Delivery
 
