@@ -12,6 +12,7 @@
 - Kubernetes cluster architecture: https://kubernetes.io/docs/concepts/architecture/
 - Kubernetes nodes: https://kubernetes.io/docs/concepts/architecture/nodes/
 - Kubernetes objects: https://kubernetes.io/docs/concepts/overview/working-with-objects/
+- Kubernetes API overview: https://kubernetes.io/docs/reference/using-api/
 - Labels and selectors: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 - Pods: https://kubernetes.io/docs/concepts/workloads/pods/
 - Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
@@ -19,6 +20,7 @@
 - ConfigMaps: https://kubernetes.io/docs/concepts/configuration/configmap/
 - Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
 - Namespaces: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+- kubectl reference: https://kubernetes.io/docs/reference/kubectl/
 - Configure access to multiple clusters: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
 
 ## Additional reference
