@@ -5,11 +5,16 @@
 - **Kubernetes** is a portable, extensible, open source platform for managing containerized workloads and services with declarative configuration and automation.
 - A **cluster** consists of a **control plane** plus **worker nodes**. The control plane manages cluster state and scheduling, while nodes run Pods.
 - Core **control plane components** include **kube-apiserver**, **etcd**, **kube-scheduler**, and **kube-controller-manager**.
+- Core **node components** include the **kubelet**, a **container runtime**, and **kube-proxy**.
 - A **Kubernetes object** is a persistent record of intent. Common manifest fields are `apiVersion`, `kind`, `metadata`, and `spec`; the system reports current state in `status`.
+- **API groups and versions** identify which API endpoint a resource uses, such as `v1` for core resources and `apps/v1` for Deployments.
 - A **Pod** is the smallest deployable unit in Kubernetes. It usually runs a single container, but can run tightly coupled containers that share network and storage resources.
 - Pods are usually managed through higher-level controllers instead of being created directly.
 - A **Deployment** manages Pods declaratively through ReplicaSets. It is commonly used for stateless applications, rollouts, rollbacks, and scaling.
 - A **Service** exposes one or more Pods behind a stable network endpoint. Services usually target Pods through label selectors, which decouples clients from changing Pod IPs.
+- **Labels** are key/value pairs attached to objects, and **selectors** are how Deployments and Services match the Pods they manage or expose.
+- A **ConfigMap** stores non-confidential configuration data for workloads.
+- A **Secret** stores sensitive information such as passwords, tokens, or keys.
 - **Namespaces** isolate groups of namespaced resources inside one cluster. Object names must be unique within a namespace, but not across namespaces.
 
 ## Key commands and examples
@@ -24,9 +29,11 @@
 - Apply declarative configuration:
   - `kubectl apply -f manifest.yaml`
   - `kubectl rollout status deployment/<name> -n <namespace>`
-- Work with namespaces:
+  - `kubectl delete -f manifest.yaml`
+- Work with namespaces and context:
   - `kubectl get namespace`
   - `kubectl config set-context --current --namespace=<namespace>`
+  - `kubectl config use-context <context-name>`
 
 ### Minimal manifest reminder
 
@@ -66,17 +73,13 @@ spec:
 - Think in terms of **desired state**: you declare intent in manifests, and controllers reconcile actual state toward it.
 - **Do not rely on Pod IPs** for stable access. Use a **Service** because Pods are ephemeral.
 - **Deployments manage Pods** for stateless workloads; ReplicaSets are usually managed indirectly by the Deployment.
-- **Namespaces scope many common objects** such as Pods, Services, and Deployments, but resources like **Nodes** and **PersistentVolumes** are cluster-scoped.
+- **Services use selectors** to find the matching Pods they expose.
+- Default Service type is **ClusterIP**; **NodePort** and **LoadBalancer** expose workloads more broadly.
+- **ConfigMaps are for non-sensitive configuration**; **Secrets are for sensitive data**.
+- **Namespaces scope many common objects** such as Pods, Services, Deployments, ConfigMaps, and Secrets, but resources like **Nodes** and **PersistentVolumes** are cluster-scoped.
 - A Service DNS name follows the pattern `<service>.<namespace>.svc.cluster.local`.
 - For production use, avoid treating the `default` namespace as the permanent home for every workload.
 
-## Official references
+## References
 
-- KCNA certification overview: https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/
-- Kubernetes concepts overview: https://kubernetes.io/docs/concepts/overview/
-- Kubernetes cluster architecture: https://kubernetes.io/docs/concepts/architecture/
-- Kubernetes objects: https://kubernetes.io/docs/concepts/overview/working-with-objects/
-- Pods: https://kubernetes.io/docs/concepts/workloads/pods/
-- Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-- Services: https://kubernetes.io/docs/concepts/services-networking/service/
-- Namespaces: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+- See the root `resources.md` file for official and supplementary links.

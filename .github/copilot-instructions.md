@@ -12,5 +12,5 @@ This repository is dedicated to KCNA study content.
   - Core concepts and definitions
   - Key commands/examples
   - Exam-focused reminders
-  - Links to official references
+- Put all external reference links in the root `resources.md` file instead of topic `notes.md` files.
 - Keep `resources.md` focused on durable, high-value links and prefer official pages over blog posts.
