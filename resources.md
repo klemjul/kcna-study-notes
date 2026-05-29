@@ -20,8 +20,32 @@
 - ConfigMaps: https://kubernetes.io/docs/concepts/configuration/configmap/
 - Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
 - Namespaces: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+- RBAC authorization: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+- Persistent Volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 - kubectl reference: https://kubernetes.io/docs/reference/kubectl/
+- kubectl logs reference: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_logs/
 - Configure access to multiple clusters: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+
+## Container Orchestration
+
+- Workloads overview: https://kubernetes.io/docs/concepts/workloads/
+- Scheduling, preemption, and eviction: https://kubernetes.io/docs/concepts/scheduling-eviction/
+- DNS for Services and Pods: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+- Storage concepts: https://kubernetes.io/docs/concepts/storage/
+
+## Cloud Native Application Delivery
+
+- Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+- kubectl rollout reference: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/
+- Debug running Pods: https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/
+- Kubernetes system logs: https://kubernetes.io/docs/concepts/cluster-administration/system-logs/
+
+## Cloud Native Architecture
+
+- CNCF home: https://www.cncf.io/
+- CNCF landscape: https://landscape.cncf.io/
+- What is cloud native?: https://www.cncf.io/what-is-cloud-native/
+- CNCF community: https://www.cncf.io/community/
 
 ## Additional reference
 

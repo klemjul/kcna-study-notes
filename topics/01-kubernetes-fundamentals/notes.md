@@ -17,6 +17,12 @@
 - Kubernetes uses a **declarative model**: you describe the desired state, and controllers work continuously to reconcile actual state toward it.
 - **API groups and versions** identify which API endpoint a resource uses, such as `v1` for core resources and `apps/v1` for Deployments.
 
+### Administration, security, and troubleshooting basics
+
+- **Administration** at the KCNA level focuses on reading cluster state, switching contexts, inspecting resources, and understanding which objects are namespaced or cluster-scoped.
+- **Security** starts with basic isolation and access control concepts: use **Namespaces** to separate workloads, **Secrets** for sensitive data, and **RBAC** to control who can perform actions through the Kubernetes API.
+- **Troubleshooting** usually starts with resource status, events, and logs. A common flow is `kubectl get`, then `kubectl describe`, then `kubectl logs` for the failing workload.
+
 ### Fundamental resources
 
 - A **Pod** is the smallest deployable unit in Kubernetes. It usually runs a single container, but can run tightly coupled containers that share network and storage resources.
@@ -114,6 +120,7 @@ spec:
 - Default Service type is **ClusterIP**; **NodePort** and **LoadBalancer** expose workloads more broadly.
 - **ConfigMaps are for non-sensitive configuration**; **Secrets are for sensitive data**.
 - **Namespaces scope many common objects** such as Pods, Services, Deployments, ConfigMaps, and Secrets, but resources like **Nodes** and **PersistentVolumes** are cluster-scoped.
+- **PersistentVolumes** represent cluster storage resources, while **PersistentVolumeClaims** are workload requests for storage.
 - For production use, avoid treating the `default` namespace as the permanent home for every workload.
 
 ## References
