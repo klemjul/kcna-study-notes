@@ -4,10 +4,10 @@
 
 ### Core concepts and definitions
 
-- A **Service** provides a stable virtual IP and DNS name for a set of Pods selected by labels.
+- A **Service** typically provides a stable virtual IP and DNS name for a set of Pods selected by labels (except headless Services, which have no virtual IP).
 - Common Service types are **ClusterIP** (internal), **NodePort** (node-level exposure), and **LoadBalancer** (external LB integration).
-- **kube-proxy** programs node networking rules so Service traffic is forwarded to healthy Pod endpoints.
-- Kubernetes DNS resolves Service names (for example, `my-svc.my-ns.svc.cluster.local`) and can resolve Pod records when enabled.
+- In many clusters, **kube-proxy** programs node networking rules so Service traffic is forwarded to healthy Pod endpoints, though some CNIs replace this behavior.
+- Kubernetes DNS resolves Service names (for example, `my-svc.my-ns.svc.cluster.local`); Pod/endpoint records depend on Service type and DNS configuration.
 - **NetworkPolicy** defines allowed inbound and outbound traffic for selected Pods; enforcement depends on the cluster CNI plugin.
 
 ### Key commands and examples
