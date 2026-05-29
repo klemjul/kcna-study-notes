@@ -6,6 +6,13 @@ Personal study notes and resources for the **Kubernetes and Cloud Native Associa
 
 The [KCNA certification](https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/) validates foundational knowledge of Kubernetes and cloud native concepts.
 
+| Domain | Weight |
+|---|---|
+| Kubernetes Fundamentals | 44% |
+| Container Orchestration | 28% |
+| Cloud Native Application Delivery | 16% |
+| Cloud Native Architecture | 12% |
+
 ## Repository structure
 
 ```text
@@ -20,9 +27,7 @@ kcna-study-notes/
     │   └── notes.md
     ├── 03-cloud-native-architecture/
     │   └── notes.md
-    ├── 04-cloud-native-observability/
-    │   └── notes.md
-    └── 05-cloud-native-application-delivery/
+    └── 04-cloud-native-application-delivery/
         └── notes.md
 ```
 
