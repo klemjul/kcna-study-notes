@@ -34,10 +34,10 @@
 
 ### Core concepts and definitions
 
-- Per CNCF, cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments.
+- Per CNCF, cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds.
 - Cloud native systems commonly use **containers**, **microservices**, **declarative APIs**, and **automation**.
 - Kubernetes is a key orchestration platform in the cloud native ecosystem, but the ecosystem also includes observability, networking, runtime, and delivery projects.
-- CNCF hosts projects at different maturity stages (such as sandbox, incubating, and graduated).
+- CNCF hosts projects at three maturity stages: sandbox, incubating, and graduated.
 - The CNCF Landscape is used to navigate categories of tools and projects.
 
 ### Key commands and examples
@@ -62,7 +62,7 @@
 
 - CNCF and Kubernetes are open source communities with vendor-neutral governance.
 - Community collaboration happens through public repositories, issues, pull requests, and design discussions.
-- Kubernetes work is organized through SIGs (Special Interest Groups) and community meetings.
+- Kubernetes work is organized through SIGs (Special Interest Groups), Working Groups (WGs), and community meetings.
 - The Cloud Native Computing Foundation provides events, working groups, and end-user/community programs.
 
 ### Key commands and examples
