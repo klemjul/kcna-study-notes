@@ -1,5 +1,13 @@
 # Cloud Native Architecture
 
+## Curriculum headings
+
+### Observability
+
+### Cloud native ecosystem and principles
+
+### Cloud native community and collaboration
+
 ## Core concepts and definitions
 
 - **Cloud native computing** uses an open source software stack to deploy applications as microservices, package each part into its own container, and dynamically orchestrate those containers to optimize resource use.

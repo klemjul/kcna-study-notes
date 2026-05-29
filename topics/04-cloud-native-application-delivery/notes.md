@@ -1,5 +1,11 @@
 # Cloud Native Application Delivery
 
+## Curriculum headings
+
+### Application delivery
+
+### Debugging
+
 ## Core concepts and definitions
 
 - **Application delivery** covers how software moves from source code to a running workload through build, test, release, and deployment steps.
@@ -17,7 +23,7 @@
 - Debugging starts with identifying whether the problem is in image build, configuration, scheduling, networking, or runtime behavior.
 - In Kubernetes, common first checks are resource status, events, logs, and rollout history.
 
-### Observability
+### Additional draft notes
 
 - **Observability** combines metrics, logs, and traces to help you understand system behavior.
 - Metrics show trends and thresholds, logs show detailed events, and traces show request flow across services.
