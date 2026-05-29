@@ -20,9 +20,7 @@ kcna-study-notes/
     │   └── notes.md
     ├── 03-cloud-native-architecture/
     │   └── notes.md
-    ├── 04-cloud-native-observability/
-    │   └── notes.md
-    └── 05-cloud-native-application-delivery/
+    └── 04-cloud-native-application-delivery/
         └── notes.md
 ```
 
