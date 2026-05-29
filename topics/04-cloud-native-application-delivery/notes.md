@@ -1,3 +1,17 @@
 # Cloud Native Application Delivery
 
-Add notes about CI/CD, GitOps, progressive delivery, and release best practices.
+## Application delivery
+
+### Core concepts and definitions
+
+### Key commands and examples
+
+### Exam-focused reminders
+
+## Debugging
+
+### Core concepts and definitions
+
+### Key commands and examples
+
+### Exam-focused reminders

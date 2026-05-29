@@ -1,3 +1,25 @@
 # Cloud Native Architecture
 
-Add notes about microservices, serverless, cloud native patterns, and ecosystem principles.
+## Observability
+
+### Core concepts and definitions
+
+### Key commands and examples
+
+### Exam-focused reminders
+
+## Cloud native ecosystem and principles
+
+### Core concepts and definitions
+
+### Key commands and examples
+
+### Exam-focused reminders
+
+## Cloud native community and collaboration
+
+### Core concepts and definitions
+
+### Key commands and examples
+
+### Exam-focused reminders
