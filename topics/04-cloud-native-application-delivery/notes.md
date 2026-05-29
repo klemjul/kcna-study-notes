@@ -8,7 +8,7 @@
 - A **Deployment** manages stateless application rollout through ReplicaSets and supports rolling updates and rollbacks.
 - A **rolling update** replaces Pods gradually to limit downtime and reduce risk during version changes.
 - **Readiness probes** control when a Pod can receive traffic, which protects users during startup and rollouts.
-- A **rollback** restores a previous ReplicaSet revision when a rollout is unhealthy.
+- A **rollback** usually means manually reverting to a previous ReplicaSet revision (for example with `kubectl rollout undo`); Deployments do not auto-rollback by default.
 
 ### Key commands and examples
 
@@ -52,7 +52,7 @@
 - Debug from inside cluster/network context:
   - `kubectl exec -it <pod-name> -n <namespace> -- sh`
   - `kubectl port-forward pod/<pod-name> 8080:80 -n <namespace>`
-  - `kubectl debug -it <pod-name> -n <namespace> --image=busybox`
+  - `kubectl debug -it pod/<pod-name> -n <namespace> --image=busybox --target=<container-name>`
 
 ### Exam-focused reminders
 
