@@ -48,6 +48,7 @@
 ### Inspect cluster and workloads
 
 - Inspect cluster and workloads:
+  - `kubectl cluster-info`
   - `kubectl get nodes`
   - `kubectl get pods -A`
   - `kubectl get deployments -n <namespace>`
