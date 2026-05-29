@@ -17,7 +17,7 @@
   - `kubectl logs <pod-name> -n <namespace>`
   - `kubectl logs <pod-name> -c <container-name> -n <namespace>`
 - Inspect recent cluster events:
-  - `kubectl get events -A --sort-by=.lastTimestamp`
+  - `kubectl get events -A --sort-by=.metadata.creationTimestamp`
 - Inspect resource usage (if Metrics Server is installed):
   - `kubectl top nodes`
   - `kubectl top pods -A`
@@ -43,7 +43,7 @@
 ### Key commands and examples
 
 - Quickly inspect Kubernetes component versions:
-  - `kubectl version --short`
+  - `kubectl version`
 - Explore available API groups/resources:
   - `kubectl api-resources`
   - `kubectl api-versions`
@@ -67,7 +67,7 @@
 
 ### Key commands and examples
 
-- Show project metadata and source links for Kubernetes packages:
+- Show Kubernetes client/server versions and build metadata:
   - `kubectl version`
 - Get help text and official command references quickly:
   - `kubectl help`
