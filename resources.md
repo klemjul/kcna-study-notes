@@ -4,6 +4,8 @@
 
 - Linux Foundation KCNA certification: https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/
 - CNCF KCNA overview: https://www.cncf.io/training/certification/kcna/
+- CNCF KCNA curriculum (GitHub): https://github.com/cncf/curriculum/blob/master/KCNA_Curriculum.pdf
+- CNCF KCNA curriculum README: https://github.com/cncf/curriculum/tree/master/kcna
 - Kubernetes documentation home: https://kubernetes.io/docs/home/
 
 ## Kubernetes Fundamentals
@@ -46,6 +48,12 @@
 - CNCF landscape: https://landscape.cncf.io/
 - What is cloud native?: https://www.cncf.io/what-is-cloud-native/
 - CNCF community: https://www.cncf.io/community/
+- CNCF graduated projects: https://www.cncf.io/projects/
+- CNCF TOC: https://www.cncf.io/people/technical-oversight-committee/
+- Kubernetes container probes: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+- Horizontal Pod Autoscaling: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+- Prometheus: https://prometheus.io/docs/introduction/overview/
+- OpenTelemetry: https://opentelemetry.io/docs/
 
 ## Additional reference
 
