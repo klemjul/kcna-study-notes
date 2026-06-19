@@ -1,0 +1,17 @@
+{
+  "name": "kcna-study-notes",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  // Forward OpenCode's web port to the host
+  "forwardPorts": [4096],
+  "portsAttributes": {
+    "4096": {
+      "label": "OpenCode Web",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "remoteEnv": {
+    "OPENCODE_SERVER_PASSWORD": "${localEnv:OPENCODE_SERVER_PASSWORD}"
+  },
+  "postCreateCommand": "curl -fsSL https://opencode.ai/install | bash",
+  "postAttachCommand": "pgrep -x opencode || ~/.opencode/bin/opencode web --port 4096 --hostname 0.0.0.0"
+}
