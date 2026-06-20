@@ -8,6 +8,8 @@
 - A **Deployment** manages stateless application rollout through ReplicaSets and supports rolling updates and rollbacks.
 - A **rolling update** replaces Pods gradually to limit downtime and reduce risk during version changes.
 - **Readiness probes** control when a Pod can receive traffic, which protects users during startup and rollouts.
+- **Liveness probes** detect when a container is unhealthy and trigger a restart to recover from deadlocks or stalls.
+- **Startup probes** protect slow-starting containers by disabling liveness and readiness checks until the application has fully started.
 - A **rollback** usually means manually reverting to a previous ReplicaSet revision (for example with `kubectl rollout undo`); Deployments do not auto-rollback by default.
 
 ### Key commands and examples
@@ -20,7 +22,11 @@
   - `kubectl rollout history deployment/<name> -n <namespace>`
   - `kubectl rollout undo deployment/<name> -n <namespace>`
 - Trigger a new rollout (for example after changing image):
-  - `kubectl set image deployment/<name> <container>=<image:tag> -n <namespace>`
+  - `kubectl set image deployment/<name> <container>=<image>:<tag> -n <namespace>`
+- Scale a Deployment up or down:
+  - `kubectl scale deployment/<name> --replicas=<count> -n <namespace>`
+- Restart a Deployment to roll out fresh Pods (for example after ConfigMap/Secret changes):
+  - `kubectl rollout restart deployment/<name> -n <namespace>`
 
 ### Exam-focused reminders
 
@@ -52,7 +58,7 @@
 - Debug from inside cluster/network context:
   - `kubectl exec -it <pod-name> -n <namespace> -- sh`
   - `kubectl port-forward pod/<pod-name> 8080:80 -n <namespace>`
-  - `kubectl debug -it pod/<pod-name> -n <namespace> --image=busybox --target=<container-name>`
+  - `kubectl debug -it pod/<pod-name> -n <namespace> --image=busybox --target=<container-name> -- sh`
 
 ### Exam-focused reminders
 
@@ -60,3 +66,7 @@
 - For restart loops, `logs --previous` is often the key command to identify why the last container crashed.
 - Distinguish scheduling issues (Pod never starts) from runtime issues (Pod starts then fails).
 - Readiness and liveness failures can look similar; readiness impacts traffic routing, liveness triggers restarts.
+
+## References
+
+- See the root `resources.md` file for official and supplementary links.
