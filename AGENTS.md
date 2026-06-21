@@ -1,4 +1,4 @@
-# KCNA Study Notes — Agent Guide.
+# KCNA Study Notes — Agent Guide..
 
 This is a markdown-only study notes repo. No build system, no tests, no CI, no package manager.
 
