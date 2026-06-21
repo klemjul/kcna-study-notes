@@ -5,15 +5,20 @@ on:
   pull_request_review_comment:
     types: [created]
 
+concurrency:
+  group: opencode-${{ github.event.issue.number || github.event.pull_request.number || github.event.comment.id }}
+  cancel-in-progress: true
+
 jobs:
   opencode:
     if: |
       (contains(github.event.comment.body, '/oc') ||
-      contains(github.event.comment.body, '/opencode')) &&
+       contains(github.event.comment.body, '/opencode')) &&
+      github.event.comment.author_association == 'OWNER' &&
       github.event.comment.user.login == github.repository_owner
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
-      id-token: write
       contents: read
       pull-requests: read
       issues: read
@@ -21,11 +26,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
-          persist-credentials: false
+          token: ${{ secrets.TOKEN_BOT }}
+
+      - name: Configure git identity
+        run: |
+          git config --global user.name "Clément BOT"
+          git config --global user.email "295574898+klemjulbot@users.noreply.github.com"
+          git config --global github.username "klemjulbot"
 
       - name: Run OpenCode
         uses: anomalyco/opencode/github@4ed4f749e644ffb5b279fb30b7b915e743d80142 # v1.17.7
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_BOT }}
+          OPENCODE_PERMISSION: '{"bash": "deny"}'
         with:
           model: opencode-go/kimi-k2.6
+          use_github_token: true
