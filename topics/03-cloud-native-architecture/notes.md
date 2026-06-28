@@ -8,11 +8,13 @@
 - The three common telemetry signals are **metrics**, **logs**, and **traces**.
 - **Metrics** are numeric measurements over time (such as CPU usage or request latency).
 - **Logs** are timestamped event records produced by applications and platform components.
-- **Traces** represent end-to-end request flow across services and help identify where latency or errors occur.
+- **Traces** represent end-to-end request flow across services and help identify where latency or errors occur. Distributed tracing tracks the entire journey of a user request from frontend through backend microservices, making it the right tool for request-flow visibility.
 - Kubernetes exposes operational signals through component logs, events, and metrics endpoints.
 - **Health probes** let Kubernetes check container health: **liveness** (restart if unhealthy), **readiness** (stop sending traffic), and **startup** (delay liveness/readiness until startup completes).
 - Key CNCF observability projects:
   - **Prometheus** — metrics collection and alerting; pulls metrics from targets via HTTP, stores time-series data, uses PromQL for queries.
+    - Prometheus metric types: **Counter** (always increasing), **Gauge** (can go up or down), **Histogram** (samples grouped in buckets), and **Summary** (similar to histogram but calculates configurable quantiles).
+  - **kube-state-metrics** — exposes the current state of Kubernetes objects (Deployments, Pods, Nodes, etc.) as Prometheus metrics by scraping the API server.
   - **OpenTelemetry** — standardized framework for generating, collecting, and exporting telemetry (metrics, logs, traces); provides SDKs, the OTLP protocol, and a Collector component to decouple data sources from backends.
   - **Fluentd** — pluggable log aggregation and forwarding; collects logs from multiple sources, transforms them, and routes to backends. **Fluent Bit** is a lightweight variant optimized for container/edge environments.
   - **Jaeger** — distributed tracing; captures spans (units of work), propagates trace context across services, and supports sampling to manage overhead.
@@ -44,6 +46,8 @@
 - **Liveness probe** restarts the container on failure; **readiness probe** controls Service traffic; **startup probe** protects slow-starting containers from liveness kills.
 - Prometheus and OpenTelemetry are the two most commonly referenced CNCF observability projects on the exam.
 - Know what each graduated observability project provides: Prometheus → metrics+alerts, Fluentd → log aggregation, Jaeger → distributed tracing, Envoy → proxy/observability data plane.
+- **kube-state-metrics** exposes cluster object state (not resource usage) as Prometheus metrics.
+- Prometheus metric types: Counter, Gauge, Histogram, Summary.
 
 ## Cloud native ecosystem and principles
 
@@ -51,6 +55,10 @@
 
 - Per CNCF, cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds.
 - Cloud native systems commonly use **containers**, **microservices**, **declarative APIs**, and **automation**.
+- Common cloud-native personas:
+  - **Platform Engineers** design, build, and maintain the underlying platform infrastructure so application developers can deploy and run services efficiently.
+  - **FinOps** focuses on optimizing cloud costs and financial management of cloud spending.
+  - **Site Reliability Engineers (SREs)** are typically responsible for reliability, uptime, and incident management procedures.
 - **Immutable infrastructure** means servers and containers are never modified after deployment; changes are shipped as new images or instances that replace the old ones entirely.
 - **Service discovery** enables services to locate each other dynamically. Kubernetes provides it via DNS (CoreDNS assigns stable DNS names to Services and Pods), environment variables, and ClusterIP Services. Service meshes layer richer routing and discovery on top.
 - Kubernetes is a key orchestration platform in the cloud native ecosystem, but the ecosystem also includes observability, networking, runtime, and delivery projects.
@@ -77,6 +85,7 @@
   - **Linkerd** is a lightweight, Rust-based service mesh focused on simplicity and low resource overhead.
   - **Istio** is a feature-rich service mesh that uses Envoy as a sidecar proxy; it provides advanced traffic management (canary rollouts, circuit breaking), mTLS, and observability via a control plane (istiod).
 - **Serverless / FaaS** (Functions as a Service) lets you run code in response to events without managing servers, often implemented in Kubernetes via projects like Knative or on cloud platforms.
+- **OpenID Connect (OIDC)** is an authentication protocol that extends OAuth 2.0 to provide a standardized way for clients to verify user identity and obtain profile information from identity providers.
 
 ### Key commands and examples
 
@@ -98,6 +107,8 @@
 - **Immutable infrastructure** and **declarative configuration** are recurring cloud native themes — replace, don't patch.
 - Know the three auto-scaling mechanisms and which dimension each controls (HPA → replicas, VPA → resources, Cluster Autoscaler → nodes).
 - Linkerd and Istio are the two primary service mesh projects; know the difference: Linkerd = lightweight/simple, Istio = feature-rich/Envoy-based.
+- **Platform Engineers** build the platform; **FinOps** optimizes cloud cost; **SREs** own reliability and incident management.
+- **OIDC** (OpenID Connect) is an authentication layer on top of OAuth 2.0.
 - Supply chain security concepts (SBOM, image signing) are increasingly tested; understand their role in securing the software lifecycle.
 
 ## Cloud native community and collaboration

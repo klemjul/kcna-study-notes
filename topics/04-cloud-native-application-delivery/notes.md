@@ -5,12 +5,18 @@
 ### Core concepts and definitions
 
 - **Application delivery** in Kubernetes is the process of deploying, updating, and rolling back workloads using declarative manifests.
+- **Infrastructure as Code (IaC)** is the practice of managing and provisioning infrastructure through code rather than manual processes, enabling version control, repeatability, and automation.
 - A **Deployment** manages stateless application rollout through ReplicaSets and supports rolling updates and rollbacks.
 - A **rolling update** replaces Pods gradually to limit downtime and reduce risk during version changes.
 - **Readiness probes** control when a Pod can receive traffic, which protects users during startup and rollouts.
 - **Liveness probes** detect when a container is unhealthy and trigger a restart to recover from deadlocks or stalls.
 - **Startup probes** protect slow-starting containers by disabling liveness and readiness checks until the application has fully started.
 - A **rollback** usually means manually reverting to a previous ReplicaSet revision (for example with `kubectl rollout undo`); Deployments do not auto-rollback by default.
+- **GitOps** uses a version-controlled repository (usually Git) as the single source of truth for declarative infrastructure and application state, enabling automated, auditable, and consistent deployments.
+- **Argo CD** is a declarative GitOps continuous-delivery tool for Kubernetes. An **ApplicationSet** dynamically generates Argo CD Applications from a single manifest connected to a Git repository, enabling continuous deployment across multiple environments.
+- **Helm** is a package manager for Kubernetes that uses templated manifests and value files to parameterize deployments for different environments.
+- **Kustomize** is a Kubernetes-native configuration management tool that uses bases and overlays to apply environment-specific patches without modifying the original manifests.
+- A **Site Reliability Engineer (SRE)** is typically responsible for reliability, uptime, and creating/executing incident management procedures in cloud-native environments.
 
 ### Key commands and examples
 
@@ -34,6 +40,9 @@
 - Remember Deployment relationships: **Deployment -> ReplicaSet -> Pods**.
 - `kubectl rollout status` is the fastest command to confirm whether an update is progressing successfully.
 - If a rollout fails, inspect events/probes and then use `kubectl rollout undo` for fast recovery.
+- **GitOps** = Git is the single source of truth for declarative infrastructure and application state.
+- **Helm** uses templates + value files for environment-specific configuration; **Kustomize** uses overlays and patches without templating.
+- **Argo CD** implements GitOps; an **ApplicationSet** generates Applications from a Git-backed manifest.
 
 ## Debugging
 
