@@ -5,7 +5,7 @@
 ### Core concepts and definitions
 
 - A **Service** typically provides a stable virtual IP and DNS name for a set of Pods selected by labels (except headless Services, which have no virtual IP).
-- Common Service types are **ClusterIP** (internal), **NodePort** (node-level exposure), and **LoadBalancer** (external LB integration).
+- Common Service types are **ClusterIP** (internal), **NodePort** (node-level exposure), **LoadBalancer** (external LB integration), and **ExternalName** (DNS alias).
 - In many clusters, **kube-proxy** programs node networking rules so Service traffic is forwarded to healthy Pod endpoints, though some CNIs replace this behavior.
 - Kubernetes DNS resolves Service names (for example, `my-svc.my-ns.svc.cluster.local`); Pod/endpoint records depend on Service type and DNS configuration.
 - **NetworkPolicy** defines allowed inbound and outbound traffic for selected Pods; enforcement depends on the cluster CNI plugin.
@@ -26,7 +26,7 @@
 
 - A Service selects Pods by **labels**, not by Pod names.
 - **ClusterIP** is the default Service type.
-- NetworkPolicy is additive and only works when the CNI plugin supports policy enforcement.
+- NetworkPolicies whitelist traffic for selected Pods; multiple policies selecting the same Pod are unioned. Enforcement requires a CNI plugin that supports NetworkPolicy.
 
 ## Security
 
@@ -61,7 +61,7 @@
 ### Core concepts and definitions
 
 - Troubleshooting starts with object state (`Pending`, `CrashLoopBackOff`, `ImagePullBackOff`, probe failures, scheduling errors).
-- `Events` provide a time-ordered explanation of scheduler, kubelet, and controller actions.
+- `Events` provide explanations of scheduler, kubelet, and controller actions; they may be aggregated and are not guaranteed to be strictly time-ordered, so sort by timestamp when chronological order matters.
 - Container stdout/stderr logs are usually the first source for runtime failure analysis.
 - Readiness/liveness/startup probes influence traffic routing and restart behavior.
 - Node conditions and resource pressure can cause evictions or scheduling failures.
@@ -92,7 +92,7 @@
 - A **Volume** provides storage to containers in a Pod; its lifecycle depends on the volume type.
 - **PersistentVolume (PV)** is cluster storage, and **PersistentVolumeClaim (PVC)** is a request for storage by a workload.
 - **StorageClass** defines dynamic provisioning behavior (provisioner, reclaim policy, parameters).
-- Access modes include `ReadWriteOnce`, `ReadOnlyMany`, and `ReadWriteMany` (driver-dependent).
+- Access modes include `ReadWriteOnce`, `ReadOnlyMany`, `ReadWriteMany`, and `ReadWriteOncePod` (driver-dependent).
 - Persistent storage survives Pod replacement, unlike container writable layers.
 
 ### Key commands and examples
@@ -122,7 +122,7 @@ spec:
 ### Exam-focused reminders
 
 - Pods reference **PVCs**, not PVs directly in most workflows.
-- Binding is primarily driven by requested size, access mode, and StorageClass.
+- A PVC binds to a PV that satisfies its access mode and StorageClass and has at least the requested storage capacity.
 - Reclaim policy (`Delete`/`Retain`) controls what happens to backing storage after PVC release.
 
 ## References
