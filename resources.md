@@ -12,6 +12,10 @@
 
 - Kubernetes concepts overview: https://kubernetes.io/docs/concepts/overview/
 - Kubernetes cluster architecture: https://kubernetes.io/docs/concepts/architecture/
+- Open Container Initiative (OCI): https://opencontainers.org/
+- OCI runtime specification: https://github.com/opencontainers/runtime-spec
+- containerd: https://containerd.io/
+- CRI-O: https://cri-o.io/
 - Kubernetes nodes: https://kubernetes.io/docs/concepts/architecture/nodes/
 - Kubernetes objects: https://kubernetes.io/docs/concepts/overview/working-with-objects/
 - Kubernetes API overview: https://kubernetes.io/docs/reference/using-api/
@@ -24,6 +28,9 @@
 - kubectl reference: https://kubernetes.io/docs/reference/kubectl/
 - kubectl logs reference: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_logs/
 - Configure access to multiple clusters: https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+- Container Runtime Interface (CRI): https://kubernetes.io/docs/concepts/architecture/cri/
+- Kubernetes API versioning and deprecation: https://kubernetes.io/docs/reference/using-api/deprecation-policy/
+- Kubernetes metrics-server: https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-metrics-pipeline/
 
 ## Container Orchestration
 
@@ -34,6 +41,13 @@
 - RBAC authorization: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - Storage concepts: https://kubernetes.io/docs/concepts/storage/
 - Persistent Volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+- Container Storage Interface (CSI): https://kubernetes-csi.github.io/docs/
+- Pod Security Standards: https://kubernetes.io/docs/concepts/security/pod-security-standards/
+- Pod Security Admission: https://kubernetes.io/docs/concepts/security/pod-security-admission/
+- Ingress: https://kubernetes.io/docs/concepts/services-networking/ingress/
+- Gateway API: https://gateway-api.sigs.k8s.io/
+- Falco: https://falco.org/docs/
+- Open Policy Agent: https://www.openpolicyagent.org/docs/latest/
 
 ## Cloud Native Application Delivery
 
@@ -41,6 +55,10 @@
 - kubectl rollout reference: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/
 - Debug running Pods: https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/
 - Kubernetes system logs: https://kubernetes.io/docs/concepts/cluster-administration/system-logs/
+- Argo CD: https://argo-cd.readthedocs.io/
+- ApplicationSet controller: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/
+- Helm documentation: https://helm.sh/docs/
+- Kustomize: https://kustomize.io/
 
 ## Cloud Native Architecture
 
@@ -53,7 +71,10 @@
 - Kubernetes container probes: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 - Horizontal Pod Autoscaling: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 - Prometheus: https://prometheus.io/docs/introduction/overview/
+- Prometheus metric types: https://prometheus.io/docs/concepts/metric_types/
+- kube-state-metrics: https://github.com/kubernetes/kube-state-metrics
 - OpenTelemetry: https://opentelemetry.io/docs/
+- OpenID Connect (OIDC): https://openid.net/developers/how-connect-works/
 
 ## Additional reference
 
